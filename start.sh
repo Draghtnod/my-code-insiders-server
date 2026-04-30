@@ -65,7 +65,7 @@ else
 fi
 
 # Initialize the base command
-CMD="code serve-web --host $HOST --port $PORT"
+CMD="code-insiders serve-web --host $HOST --port $PORT"
 
 # Check for SERVER_DATA_DIR and add to command if set
 if [ -n "$SERVER_DATA_DIR" ]; then
