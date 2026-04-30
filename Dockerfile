@@ -30,7 +30,7 @@ RUN ARCH=$(dpkg --print-architecture) && \
         rm /tmp/packages.microsoft.gpg && \
         apt-get update && apt-get install -y code-insiders && rm -rf /var/lib/apt/lists/* && \
         echo "VS Code installed successfully" && \
-        which code || (echo "ERROR: code command not found after installation!" && exit 1); \
+        which code-insiders || (echo "ERROR: code command not found after installation!" && exit 1); \
     elif [ "$TARGETARCH" = "arm64" ] || [ "$ARCH" = "arm64" ]; then \
         echo "Installing VS Code for arm64..." && \
         wget https://aka.ms/linux-arm64-deb -O /tmp/vscode-arm64.deb && \
