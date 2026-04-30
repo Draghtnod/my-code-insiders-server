@@ -6,8 +6,8 @@ Official VS Code Server in Docker with WebSocket support, full extension compati
 
 ```bash
 # Pull and run
-docker pull ghcr.io/nerasse/my-code-server:main
-docker run -d -p 8585:8585 -e TOKEN=yourtoken ghcr.io/nerasse/my-code-server:main
+docker pull ghcr.io/Draghtnod/my-code-insiders-server:main
+docker run -d -p 8585:8585 -e TOKEN=yourtoken ghcr.io/Draghtnod/my-code-insiders-server:main
 
 # Or with docker-compose
 docker compose up -d
@@ -26,17 +26,17 @@ Access: `http://localhost:8585?tkn=yourtoken`
 ### Option 1: Using Pre-built Image
 
 ```bash
-docker pull ghcr.io/nerasse/my-code-server:main
+docker pull ghcr.io/Draghtnod/my-code-insiders-server:main
 ```
 
 ### Option 2: Build Locally
 
 ```bash
 # Using buildx (recommended)
-docker buildx build -t my-code-server:main .
+docker buildx build -t my-code-insiders-server:main .
 
 # Or using legacy builder
-docker build -t my-code-server:main .
+docker build -t my-code-insiders-server:main .
 ```
 
 ## Usage
@@ -71,7 +71,7 @@ volumes:
 docker run -d -p 8585:8585 \
   -e PORT=8585 \
   -e TOKEN=sometoken \
-  my-code-server:main
+  my-code-insiders-server:main
 ```
 
 **With volumes and custom UID/GID:**
@@ -82,7 +82,7 @@ docker run -d -p 8585:8585 \
   -e PUID=$(id -u) \
   -e PGID=$(id -g) \
   -v /path/to/your/data:/home/vscodeuser \
-  my-code-server:main
+  my-code-insiders-server:main
 ```
 
 ## Configuration
