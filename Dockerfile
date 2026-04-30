@@ -28,7 +28,7 @@ RUN ARCH=$(dpkg --print-architecture) && \
         install -o root -g root -m 644 /tmp/packages.microsoft.gpg /etc/apt/trusted.gpg.d/ && \
         echo "deb [arch=amd64 signed-by=/etc/apt/trusted.gpg.d/packages.microsoft.gpg] https://packages.microsoft.com/repos/code stable main" > /etc/apt/sources.list.d/vscode.list && \
         rm /tmp/packages.microsoft.gpg && \
-        apt-get update && apt-get install -y code && rm -rf /var/lib/apt/lists/* && \
+        apt-get update && apt-get install -y code-insiders && rm -rf /var/lib/apt/lists/* && \
         echo "VS Code installed successfully" && \
         which code || (echo "ERROR: code command not found after installation!" && exit 1); \
     elif [ "$TARGETARCH" = "arm64" ] || [ "$ARCH" = "arm64" ]; then \
